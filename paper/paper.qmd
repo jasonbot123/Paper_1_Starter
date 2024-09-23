@@ -2,12 +2,15 @@
 title: "Assessing Motor Vehicle Collisions Severity in Toronto"
 author: 
   - Jason Yang
-date: format(Sys.time())
-abstract: "First sentence. Second sentewnce. Third sentence. Fourth sentence."
+date: September 23, 2024 
+abstract: "In 2019, 2.3% of death globally are caused by Motor vehicle collisions, 1.3 million per year and 3500 deaths per day. This paper explores statistical techniques to analyze motor crash data in Toronto, either real-world or stimulated, with the aim of identifying the cause of crashes. The motor vehicle collision data was collected from Open Toronto data and it does not guarantee accuracy, completeness, timeliness of the data and it should not be compared to any other source of crime data. However, from the models created, we are able to predict thaat the number of accidents per year had decreased over the years due to improved technologies and public safety. "
 format: pdf
 number-sections: true
+Acknowwledgements: https://github.com/jasonbot123/Paper_1_Starter
 bibliography: references.bib
 ---
+
+
 
 
 
