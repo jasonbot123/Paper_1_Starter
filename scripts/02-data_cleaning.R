@@ -15,9 +15,10 @@ raw_data <- read_csv("data/raw_data/unedited_data.csv")
 
 cleaned_data <-
   raw_data |>
-  select(DATE, TIME, VISIBILITY, DISTRICT, INVAGE, DRIVCOND, ACCLASS, INJURY) |>
+  select(DATE, TIME, VISIBILITY, DISTRICT, INVAGE, DRIVCOND, ACCLASS, INJURY, SPEEDING, AG_DRIV) |>
   tidyr::drop_na() 
 cleaned_data$DATE <- format(as.Date(cleaned_data$DATE), "%Y")
+cleaned_data$SPEEDING <- replace(cleaned_data$SPEEDING, cleaned_data$SPEEDING == "None", "No")
 cleaned_data <- cleaned_data %>% rename(YEAR = DATE)
 
 
