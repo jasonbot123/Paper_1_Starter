@@ -68,6 +68,9 @@ Among the 50 variables recorded in this dataset, the most relevant variables cho
 #| label: fig-counts
 #| layout-ncol: 2
 
+set.seed(1008783461)
+
+#Create a line graph for the Number of Accidents from 2006-2024
 accidents_per_year <- as.data.frame(table(analysis_data$YEAR))
 colnames(accidents_per_year) <- c("Year", "Number_of_Accidents")
 accidents_per_year$Year <- as.numeric(as.character(accidents_per_year$Year))
@@ -78,6 +81,7 @@ ggplot(accidents_per_year, aes(x = Year, y = Number_of_Accidents)) +
   theme_minimal() + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+#Create a bar graph for the Number of Accidents within each District
 accidents_per_district <- as.data.frame((table(analysis_data$DISTRICT)))
 colnames(accidents_per_district) <- c("District", "Number_of_Accidents")
 accidents_per_district <- accidents_per_district %>% filter(District != "None")
@@ -87,6 +91,7 @@ ggplot(accidents_per_district, aes(x = District, y = Number_of_Accidents)) +
   theme_minimal() + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+#Create a bar graph for the Number of Accidents with Response to Visibility of that time
 Vision_accidents <- as.data.frame((table(analysis_data$VISIBILITY)))
 colnames(Vision_accidents) <- c("Visibility", "Number_of_Accidents")
 Vision_accidents <- Vision_accidents %>% filter(Visibility != "None")
@@ -96,6 +101,7 @@ ggplot(Vision_accidents, aes(x = Visibility, y = Number_of_Accidents)) +
   theme_minimal() + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+#Create a bar graph for the Driver's Condition when the Collision Occurred
 Driver_cond <- as.data.frame((table(analysis_data$DRIVCOND)))
 colnames(Driver_cond) <- c("Drivers_Condition", "Number_of_Accidents")
 Driver_cond <- Driver_cond %>% filter(Drivers_Condition != "None")
@@ -105,6 +111,7 @@ ggplot(Driver_cond, aes(x = Drivers_Condition, y = Number_of_Accidents)) +
   theme_minimal() + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+#Create a bar graph for the Speed of the motor vehicle when the Collision occurred 
 Speeding <- as.data.frame((table(analysis_data$SPEEDING)))
 colnames(Speeding) <- c("Speeding", "Number_of_Accidents")
 ggplot(Speeding, aes(x = Speeding, y = Number_of_Accidents)) +
@@ -113,6 +120,7 @@ ggplot(Speeding, aes(x = Speeding, y = Number_of_Accidents)) +
   theme_minimal() + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+#Create a bar graph to show whether the driver was aggressive driving when the Accident occurred
 Aggressive_Driving <- as.data.frame((table(analysis_data$AG_DRIV)))
 colnames(Aggressive_Driving) <- c("Aggressive_Driving", "Number_of_Accidents")
 ggplot(Aggressive_Driving, aes(x = Aggressive_Driving, y = Number_of_Accidents)) +
@@ -128,6 +136,8 @@ ggplot(Aggressive_Driving, aes(x = Aggressive_Driving, y = Number_of_Accidents))
 #| warning: false
 #| message: false
 #| layout-ncol: 1
+
+#Create a bar graph for the Number of Accidents per Age Group since 2020
 filtered_data <- analysis_data[analysis_data$YEAR >= 2020, ]
 ggplot(filtered_data, aes(x = INVAGE)) +
   geom_bar() +
