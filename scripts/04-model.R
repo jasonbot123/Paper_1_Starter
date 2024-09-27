@@ -66,7 +66,7 @@ ggplot(Speeding, aes(x = Speeding, y = Number_of_Accidents)) +
 
 Aggresive_Driving <- as.data.frame((table(analysis_data$AG_DRIV)))
 colnames(Aggresive_Driving) <- c("Aggresive_Driving", "Number_of_Accidents")
-ggplot(Aggresive_Driving, aes(x = Aggresive_Driving, y = Number_of_Accidents)) +
+second_model <- ggplot(Aggresive_Driving, aes(x = Aggresive_Driving, y = Number_of_Accidents)) +
   geom_bar(stat = "identity", fill = "skyblue") +  # Bar graph
   labs(title = "Was the Driver Aggresive Driving?", x = "Aggresive Driving", y = "Number of Accidents") +
   theme_minimal() + 
