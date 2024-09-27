@@ -31,6 +31,8 @@ Toronto, one of the largest and most densely populated cities in North America, 
 
 This paper aims to analyze motor vehicle collision data in Toronto by collecting the Data from Open World Toronto (@Opendatatoronto). The data used in this study were sourced from Open Toronto, but the accuracy, completeness, and timeliness of the data are not guaranteed, and it should not be compared with other crime data sources. The purpose is to assess the causes of motor vehicle collisions in Toronto and identify patterns or factors that contribute to these incidents. By analyzing the data through statistical methods, the study aims to uncover key variables such as weather conditions, time of day, road types, and driver behavior that may influence the likelihood of crashes. 
 
+In this paper, models were made for each categorical variable that could've contributed for each motor vehicle collision observation. By observing each model, references were drawn to conclude whether those variables had significant impacts of the cause of each collision. These findings could then inform Toronto's city planners to make better decisions and improvise at reducing the number of motor vehicle collisions. 
+
 # Data {#sec-data}
 
 ## Overview {#sec-data-overview}
