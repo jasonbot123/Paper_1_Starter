@@ -13,8 +13,15 @@ library(tidyverse)
 # 
 
 #### Test data ####
-all(is.na(data$number_of_accidents)) #Test for NAs 
-data$number_of_accidents |> min() <= 0 #Test for negative numbers in number of accidents
-all(data$number_of_accidents <= 100) #Test whether there are an impossible number of accidents on a specific date 
-all(data$dates > as.Date("2005-12-31")) #Test whether all dates are later than the specified date
-
+#Test for NAs 
+all(is.na(data$number_of_accidents)) 
+#Test for negative numbers in number of accidents
+data$number_of_accidents |> min() <= 0 
+#Test whether there are an impossible number of accidents on a specific date 
+all(data$number_of_accidents <= 100) 
+#Test whether all dates are later than the specified date
+all(data$dates > as.Date("2005-12-31")) 
+#Test for duplicated rows 
+data %>% duplicated() %>% sum()
+#Test for Outliers in the TIME variable 
+boxplot(cleaned_data %>% select_if(is.numeric), main = "Outliers in TIME Columns")
