@@ -20,8 +20,9 @@ start_date <- as.Date("2006-01-01")
 end_date <- as.Date("2023-12-31")
 
 #Set the number of random dates generated
-number_of_dates <- 100
+n = 100
 
+#Stimulate 100 observations of the Data with the relevant variables
 data <-
   tibble(
     dates = as.Date(
@@ -32,9 +33,18 @@ data <-
       ),
       origin = "1970-01-01"
     ),
-    number_of_accidents = rpois(n = number_of_dates, lambda = 10),
-    weather = rbinom(number_of_dates, 1, 0.1 )
+    number_of_accidents = rpois(n = n, lambda = 10),
+    WEATHER = rbinom(number_of_dates, 1, 0.1 ),
+    DISTRICT <- sample(c('Downtown', 'Northside', 'East End', 'West End', 'Suburb'), n, replace=TRUE),
+    DRIV_COND <- sample(c('Normal', 'Fatigued', 'Intoxicated', 'Distracted'), n, replace=TRUE),
+    ACCLASS <- sample(c('Minor', 'Serious', 'Fatal'), n, replace=TRUE),
+    INJURY <- sample(c('None', 'Minor', 'Major', 'Fatal'), n, replace=TRUE),
+    SPEEDING <- sample(c('Yes', 'No'), n, replace=TRUE),
+    AG_DRIV <- sample(c('Yes', 'No'), n, replace=TRUE)
+    
+    
   )
+
 
 write_csv(data, file = "data/raw_data/simulated.csv")
 
