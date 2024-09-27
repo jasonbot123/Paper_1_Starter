@@ -46,7 +46,7 @@ Despite the dataset's richness and detailed aspects of the vehicle collision, no
 
 ## Features {#sec-data-features}
 
-The dataset titled Motor Vehicle Collisions Involving Killed or Seriously Injured (KSI) Since 2006 contains 18,957 observations across 50 variables. Due to the complexity of analyzing such a large dataset, only the most relevant variables were selected for statistical analysis. This was achieved using the select() function from the dplyr package in R, allowing for a more focused exploration of the key factors contributing to serious collisions. 
+The dataset titled Motor Vehicle Collisions Involving Killed or Seriously Injured (KSI) since 2006 contains 18,957 observations across 50 variables. Due to the complexity of analyzing such a large dataset, only the most relevant variables were selected for statistical analysis. This was achieved using the select() function from the dplyr package in R, allowing for a more focused exploration of the key factors contributing to serious collisions. 
 
 Among the 50 variables recorded in this dataset, the most relevant variables chosen for this paper are:
 
